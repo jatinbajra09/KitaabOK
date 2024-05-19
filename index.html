@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Book Recommendation System</title>
+  </head>
+  <body>
+    <div class="main-container" >
+      <nav>
+        <div class="nav-container">
+          <div class="nav-left">
+            <a href="index.html" class="logo">KitaabOK</a>
+          </div>
+          <div class="nav-right">
+            <ul>
+              <li>
+                <a class="nav-options" href="index.html">Home </a>
+              </li>
+              <li>
+                <a class="nav-options" href="#">Top Books </a>
+              </li>
+              <li>
+                <a class="nav-options" href="#">About </a>
+              </li>
+              <li>
+                <button onclick="loginFunction()" class="login-btn" >Login/Signup</button>
+              </li>
+              <li><input type="text" placeholder="Search books" /></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="bg-container" id="bg-container">
+        <div class="bg-image">
+          <img src="images/background.jpg" alt="" />
+          <div class="text-container">
+            <h1>Book Recommendation Engine</h1>
+            <p>Books for every moods!</p>
+            <button onclick="startfunc()" class="start-btn" >Start Now</button>
+            <!-- <a class="start-btn" href="">Start Now</a> -->
+          </div>
+        </div>
+      </div>
+      <div class="details-container">
+        <div class="num-container">
+          <div class="num">
+            <div class="num-num">400+</div>
+            <div class="num-detail">Books</div>
+          </div>
+          <div class="num">
+            <div class="num-num">15</div>
+            <div class="num-detail">Genres</div>
+          </div>
+          <div class="num">
+            <div class="num-num">300+</div>
+            <div class="num-detail">Authors</div>
+          </div>
+        </div>
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore magni
+          natus, iusto autem illum, nam itaque impedit quo officia nesciunt cum
+          aut qui ab blanditiis quis minima cumque reprehenderit quia, quod
+          repellat enim id? Beatae aut quod adipisci rem accusamus dicta sint
+          commodi in eligendi animi, dolor eaque labore veritatis veniam
+          dignissimos eum nihil, earum dolorum neque expedita, ratione modi
+          architecto. Unde veniam magni dolores, necessitatibus sequi deserunt,
+          laborum tenetur, aliquam adipisci facere eaque! Optio amet, expedita
+          debitis, reprehenderit eos inventore perferendis totam adipisci, nobis
+          porro animi! Tenetur placeat corporis architecto vel doloremque
+          necessitatibus, veniam reiciendis, itaque modi ad commodi aspernatur
+          possimus voluptatibus obcaecati velit temporibus. Odit odio
+          consectetur consequuntur, pariatur harum quas non omnis reiciendis
+          saepe assumenda nostrum quis amet, perferendis similique rerum
+          facilis? Nisi nulla optio, officia nihil, magnam odit minima commodi
+          cum, nostrum amet dolor. Voluptatem ipsa sint saepe, odit ratione,
+          molestias officiis dolores aspernatur, tenetur aperiam nihil
+          doloremque itaque. Voluptatum illum, rerum maxime architecto omnis
+          exercitationem eum nam a libero totam fugit minima quod repellendus
+          sed aspernatur voluptatibus dolorem assumenda sapiente! Quidem eveniet
+          ullam minima iure modi dolorum reiciendis quae explicabo! Explicabo
+          sed, pariatur deleniti eligendi excepturi architecto fugit quis
+          numquam consequatur iusto officiis voluptates deserunt.
+        </div>
+      </div>
+      <!-- Add the survey container after the details-container -->
+      <div id="survey-container" style="display: none;">
+        <div class="survey-questions">
+            <div class="question">What genre are you interested in?</div>
+            <div class="options">
+                <label class="custom-radio"><input type="radio" name="genre" value="fiction"> <span class="radio-btn"></span> Fiction</label><br>
+                <label class="custom-radio"><input type="radio" name="genre" value="mystery"  > <span class="radio-btn"></span> Mystery</label><br>
+                <label class="custom-radio"><input type="radio" name="genre" value="fantasy"  > <span class="radio-btn"></span> Fantasy</label><br> 
+            </div>
+
+            <button class='next-btn' id='nextButton' onclick="nextQuestion()" disabled>Next</button>
+        </div>
+        <div class="survey-questions" style="display: none;">
+            <div class="question">Who are your favorite authors?</div>
+            <div class="options">
+                <label class="custom-radio"><input type="radio" name="author" value="stephen-king"><span class="radio-btn"></span> Stephen King</label><br>
+                <label class="custom-radio"><input type="radio" name="author" value="j-k-rowling"><span class="radio-btn"></span> J.K. Rowling</label><br>
+                <label class="custom-radio"><input type="radio" name="author" value="agatha-christie"><span class="radio-btn"></span> Agatha Christie</label><br> 
+                <!-- Add more author options -->
+            </div>
+            <button class='back-btn' id='backButton' onclick="prevQuestion()" disabled>Back</button>
+
+            <button class='next-btn' id='nextButton' onclick="nextQuestion()" disabled>Next</button>
+        </div>
+        <!-- Add more survey questions similarly -->
+        <!-- <button onclick="showSurvey()">Start Survey</button> -->
+    </div>
+    <div id="congrats" style="display: none;">
+      <h2>Congratulations!</h2>
+      <p>Thank you for completing the survey!</p>
+  </div>
+
+  <!-- Login Signup page -->
+  <div id="login-signup" style="display: none;">
+     <div class="container">
+ 
+        <!-- upper button section to select
+             the login or signup form -->
+        <div class="slider"></div>
+        <div class="btn">
+            <button class="login">Login</button>
+            <button class="signup">Signup</button>
+        </div>
+ 
+        <!-- Form section that contains the
+             login and the signup form -->
+        <div class="form-section">
+ 
+            <!-- login form -->
+            <div class="login-box">
+                <input type="email"
+                       class="email ele"
+                       placeholder="youremail@email.com" required>
+                <input type="password"
+                       class="password ele"
+                       placeholder="password">
+                <button class="clkbtn">Login</button>
+            </div>
+ 
+            <!-- signup form -->
+            <div class="signup-box">
+                <input type="text"
+                       class="name ele"
+                       placeholder="Enter your name">
+                <input type="email"
+                       class="email ele"
+                       placeholder="youremail@email.com">
+                <input type="password"
+                       class="password ele"
+                       placeholder="password">
+                <input type="password"
+                       class="password ele"
+                       placeholder="Confirm password">
+                <button class="clkbtn">Signup</button>
+            </div>
+        </div>
+    </div>
+  </div>
+
+    </div>
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2024 KitaabOK. All rights reserved.</p>
+
+      <!-- Footer links -->
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#">Top Books</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+
+      <!-- Scroll up arrow button -->
+      <button onclick="scrollToTop()" id="scrollBtn" title="Go to top">
+        &#9650;
+      </button>
+    </footer>
+
+
+    <script src="start.js"></script>
+    <!-- JS for scroll up -->
+    <script src="scroll.js"></script>
+    
+  </body>
+</html>
